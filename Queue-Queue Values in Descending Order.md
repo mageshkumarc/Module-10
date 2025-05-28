@@ -23,34 +23,28 @@ To write a Python program to:
 
 ## 🧪 Program: 
 ```
-def words_to_number(word):
-    word_map = {
-        "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
-        "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10
-    }
-    return word_map.get(word.lower(), None)
+import queue  
+q = queue.Queue() 
+for i in range(5):
+    q.put(input())
 
-q = []
-n = int(input("Enter the number of elements to add to the queue: "))
-
-print(f"Enter {n} values (e.g., one, two, three):")
-for _ in range(n):
-    word = input()
-    number = words_to_number(word)
-    if number is not None:
-        q.append(number)
-    else:
-        print(f"Invalid input: {word}. Please enter a valid word between one and ten.")
-
-if len(q) >= 2:
-    q.pop(0)
-    q.pop(0)
-
-q.sort(reverse=True)
-print("Updated list in descending order:", q)
+n =  q.qsize()  
+for i in range(n):  
+    x = q.get()  
+    for j in range(n-1):  
+        y = q.get()  
+        if x < y :  
+            q.put(y)  
+        else:  
+            q.put(x)  
+            x = y     
+    q.put(x)  
+while (q.empty() == False):   
+    print(q.queue[0], end = " ")    
+    q.get()
 ```
 ### Output:
-![image](https://github.com/user-attachments/assets/ef49d77f-6971-48ef-be12-af167dc683f9)
+![image](https://github.com/user-attachments/assets/2ee4ce91-f0d3-464a-887a-c770377e993d)
 
 ## Result:
 Thus,the program is executed successfully
