@@ -22,21 +22,18 @@ To write a Python program to:
 
 ##  Program:
 ```
-q = []
-n = int(input("Enter the number of strings: "))
-
-for _ in range(n):
-    val = input("Enter a string: ")
-    q.append(val)
-
-q.pop()
-q.pop()
-
-print("Updated list:", q)
+from collections import deque
+q = deque()
+n=int(input())
+for i in range(n):
+    q.append(input())
+for i in range(2):
+    q.popleft()
+print(q)
 ```
 
 ### Output:
-![image](https://github.com/user-attachments/assets/8a4101b8-f1b0-4404-9e16-2cd65a8c48ae)
+![image](https://github.com/user-attachments/assets/eb716f3c-cc4e-473f-a037-bda14263f02d)
 
 ## Result:
 Thus,the program is executed successfully
